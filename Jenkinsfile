@@ -30,7 +30,7 @@ stages {
     stage('Push Image to ECR') {
         steps {
             sh '''
-            docker tag trendstore:latest $ECR_REPO:latest
+            docker tag trend-store:latest $ECR_REPO:latest
             docker push $ECR_REPO:latest
             '''
             }
