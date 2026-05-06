@@ -1,0 +1,24 @@
+replicaCount: 2
+
+image:
+  repository: 628590695807.dkr.ecr.us-east-1.amazonaws.com/trendstore
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 3000
+
+ingress:
+  enabled: true
+  className: alb
+
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+
+  host: ""
+
+#resources: {}

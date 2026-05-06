@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: trend-store
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: trend-store
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.containerPort }}
