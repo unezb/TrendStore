@@ -10,12 +10,6 @@ environment {
 
 stages {
 
-    stage('Checkout') {
-        steps {
-            git 'https://github.com/unezb/TrendStore.git'
-            }
-        }
-
     stage('Build Docker Image') {
         steps {
             sh '''
